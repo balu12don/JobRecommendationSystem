@@ -1,8 +1,6 @@
 # ResumeMatcher
 Match a resume to relevant open job postings
 
-Team: Prithvi Nuthanakalva, Bharadwaj Allu, Ajayeswar Peddyreddy, Tejaswi Samrat Dasari, Harrison Yu
-
 Project Proposal
 
 Build a resume matching platform (i.e. when user uploads a resume, the system parses the resume and finds the most relevant job posting from the available job postings on the internet)
