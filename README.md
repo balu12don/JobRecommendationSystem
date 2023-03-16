@@ -1,4 +1,4 @@
-# ResumeMatcher
+# Job Recommendation System
 Match a resume to relevant open job postings
 
 Project Proposal
