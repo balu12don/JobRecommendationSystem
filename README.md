@@ -1,7 +1,24 @@
-# Job Recommendation System
+# ResumeMatcher
+Match a resume to relevant open job postings
 
-The project aimed to build a job recommendation system using state-of-the-art NLP models and techniques. The project aimed to match resumes to job postings and identify clusters of resumes relevant to the job postings, essentially aiding in the job search process. 
-* Job postings were sourced from the web using APIs, pre-processed the data using Apache Spark, and stored it in a MongoDB database. 
-* Generated embeddings for all job postings using various NLP models, such as sentence transformers, and set up a parser to read resumes from PDF. 
-* Set up a framework that took a resume as input and returned all relevant job postings.
-* Evaluated various NLP models and set up frameworks to assess the robustness of job matching using clustering and classification methods with SparkML.
+Team: Prithvi Nuthanakalva, Bharadwaj Allu, Ajayeswar Peddyreddy, Tejaswi Samrat Dasari, Harrison Yu
+
+Project Proposal
+
+Build a resume matching platform (i.e. when user uploads a resume, the system parses the resume and finds the most relevant job posting from the available job postings on the internet)
+
+Steps Involved
+
+- Periodically (using Airflow) use job listing APIs to retrieve the open job listings, and save the content to GCS
+Eg APIs: https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch
+
+- Aggregate the saved data and create a collection on MongoDB
+
+- Retrieve the relevant information from the aggregate (i.e. description/location/skills etc) and pass them through a Deep Learning pre-trained network (using PyTorch/HuggingFace) to obtain sentence embeddings and store them in a vector Database (eg. Meta’s FAISS)
+
+- Build a parser to read user’s resume and use the same Deep Learning Model to obtain a sentence embedding
+
+- Find a vector (from the vector database) which closely matches the user’s vector
+
+- Optionally, build a Web Interface for users to upload the resume.
+
